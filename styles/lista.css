@@ -4,8 +4,8 @@ li {
 
 .list {
   margin-top: 40px;
-  height: 500px;
-  overflow-x: scroll;
+  height: 26rem;
+  overflow: hidden;
 }
 
 .list img {
@@ -27,4 +27,10 @@ li {
   gap: 12px;
   font: var(--paragraph);
   color: var(--content-secondary);
+}
+
+@media (width >= 80em) {
+  .list {
+    overflow-y: scroll;
+  }
 }
