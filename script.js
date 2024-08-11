@@ -16,6 +16,12 @@ function addItem() {
   label.setAttribute("for", "item")
   label.textContent = newItem.value
 
+  if(!label.textContent) {
+    alert("É necessário informar um item.")
+    document.getElementById("new-item").focus()
+    return
+  }
+
   const img = document.createElement("img")
   img.setAttribute("src", "assets/trash.svg")
   img.setAttribute("alt", "Ícone de uma lixeira indicando a remoção do item")
@@ -33,3 +39,4 @@ function addItem() {
 }
 const button = document.getElementById("add")
 button.addEventListener("click", addItem)
+
