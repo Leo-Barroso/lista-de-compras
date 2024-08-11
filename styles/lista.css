@@ -8,6 +8,10 @@ li {
   overflow-x: scroll;
 }
 
+.list img {
+  cursor: pointer;
+}
+
 .item-list {
   display: flex;
   align-items: center;
