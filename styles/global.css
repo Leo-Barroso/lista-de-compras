@@ -6,10 +6,10 @@
 
 :root {
   --background-primary: #F4F5FB;
-  --background-primary: #FFFFFF;
+  --background-secondary: #FFFFFF;
   --color-brand: #CA3884;
-  --color-brand: #A52C6B;
-  --color-brand: #C93847;
+  --color-brand-hover: #A52C6B;
+  --color-danger: #C93847;
   --content-primary: #080B12;
   --content-secondary: #374151;
   --content-tertiary: #9CA3AF;
@@ -23,6 +23,26 @@
   --link: 500 0.875rem/1rem var(--font-family);
 }
 
-h1 {
-  font: var(--link);
+body {
+  background-color: var(--background-primary);
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.desktop-only {
+  display: none;
+}
+
+input, button {
+  border-radius: .75rem;
+}
+
+button {
+  cursor: pointer;
 }

@@ -7,13 +7,34 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,500&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="assets/favicon.svg" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
-    <title>Lista de compras: quicklist</title>
+    <link rel="stylesheet" href="styles/index.css">
+    <title>quicklist</title>
   </head>
   <body>
-    
-
-
+    <header>
+      <a href="#">
+        <img src="assets/logo.svg" alt="">
+      </a>
+    </header>
+    <main class="container">
+      <nav>
+        <a href="#">Voltar</a>
+        <h1>Compras da semana</h1>
+      </nav> 
+      <div class="input-wrapper">
+        <input id="new-item" type="text" placeholder="Adicione um novo item">
+        <button id="add">Adicionar item</button>
+      </div>
+      <ul class="list">
+        <li class="item-list">
+          <div class="radio-wrapper">
+            <input name="item" id="item" type="radio">
+            <label for="item">Pão de forma</label>
+          </div>
+          <img src="assets/trash.svg" alt="">
+        </li>
+      </ul>
+    </main>
     <script src="script.js"></script>
   </body>
   </html>
