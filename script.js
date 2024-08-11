@@ -26,6 +26,11 @@ function addItem() {
   img.setAttribute("src", "assets/trash.svg")
   img.setAttribute("alt", "Ícone de uma lixeira indicando a remoção do item")
 
+  img.addEventListener("click", () => {
+    li.remove()
+    showMessage()
+  })
+
   div.appendChild(input);
   div.appendChild(label);
   li.appendChild(div);
@@ -34,9 +39,39 @@ function addItem() {
   const list = document.querySelector("ul")
   list.appendChild(li)
 
-  document.getElementById("new-item").value = "";
+  document.getElementById("new-item").value = ""
   document.getElementById("new-item").focus()
+}
+
+function showMessage() {
+  const itemRemoveDiv = document.createElement("div")
+  itemRemoveDiv.classList.add("item-remove")
+
+  const radioWrapperDiv = document.createElement("div")
+  radioWrapperDiv.classList.add("radio-wrapper")
+
+  const imgWarnnig = document.createElement("img")
+  imgWarnnig.setAttribute("src", "assets/warning-circle-filled.svg")
+  imgWarnnig.setAttribute("alt", "ícone de alerta de exclusão de item")
+
+  const removeMessage = document.createElement("span");
+  removeMessage.textContent = "O item foi removido da lista";
+  
+  const deleteImg = document.createElement("img");
+  deleteImg.setAttribute("src", "assets/delete-small.svg");
+  deleteImg.setAttribute("alt", "ícone de alerta de exclusão de item");
+
+  radioWrapperDiv.appendChild(imgWarnnig);
+  radioWrapperDiv.appendChild(removeMessage);
+  itemRemoveDiv.appendChild(radioWrapperDiv);
+  itemRemoveDiv.appendChild(deleteImg);
+
+  const lista = document.querySelector("ul");
+  lista.insertAdjacentElement("afterend", itemRemoveDiv);
+
+  setTimeout(() => {
+    itemRemoveDiv.remove();
+}, 3000);
 }
 const button = document.getElementById("add")
 button.addEventListener("click", addItem)
-
